@@ -74,4 +74,13 @@ public class PatientProfileController {
         return "redirect:/patientProfile";
 
     }
+
+    // handler method to handle delete student request
+    @GetMapping("/patientProfile/{id}")
+    public String deletePatientProfile(@PathVariable Long id){
+        patientProfileService.deletePatientProfileById(id);
+
+        return "redirect:/patientProfile";
+
+    }
 }

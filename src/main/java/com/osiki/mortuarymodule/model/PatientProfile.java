@@ -26,7 +26,8 @@ public class PatientProfile {
 
     }
 
-    public PatientProfile( String firstname, String lastname, int age, Gender gender, String causeOfDeath, LocalDate dateOfBirth, LocalDate dateOfDeath) {
+    public PatientProfile(Long id, String firstname, String lastname, int age, Gender gender, String causeOfDeath, LocalDate dateOfBirth, LocalDate dateOfDeath) {
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
@@ -39,6 +40,14 @@ public class PatientProfile {
 
     public String getFirstname() {
         return firstname;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setFirstname(String firstname) {

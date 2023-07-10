@@ -59,15 +59,26 @@
                                 placeholder="Enter patient age"
                         >
                     </div>
+                    <p>Select Gender:</p>
                     <div class="form-group">
-                        <label>Patient Gender</label>
                         <input
-                                type="text"
+                                type="radio"
+                                id="male"
                                 name="gender"
                                 th:field="*{gender}"
-                                class="form-control"
-                                placeholder="Select patient gender"
+                                th:value="MALE"
                         >
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                type="radio"
+                                id="female"
+                                name="gender"
+                                th:field="*{gender}"
+                                th:value="FEMALE"
+                        >
+                        <label for="female">Female</label>
                     </div>
                     <div class="form-group">
                         <label>Cause of Death</label>
@@ -86,6 +97,7 @@
                                 name="dateOfBirth"
                                 id="dateOfBirth"
                                 th:field="*{dateOfBirth}"
+                                th:value="${patient.dateOfBirth}"
                                 class="form-control"
                         >
                     </div>
@@ -96,6 +108,7 @@
                                 name="dateOfDeath"
                                 id="dateOfDeath"
                                 th:field="*{dateOfDeath}"
+                                th:value="${patient.dateOfDeath}"
                                 class="form-control"
                         >
                     </div>

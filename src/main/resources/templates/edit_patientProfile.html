@@ -29,7 +29,7 @@
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
             <h1 class="text-center">Update Patient Profile</h1>
             <div class="card-body">
-                <form>
+                <form th:action="@{/patientProfile/{id} (id=${patient.id})}" th:object="${patient}" method="POST">
                     <div class="form-group">
                         <label>Patient first name</label>
                         <input
@@ -60,15 +60,26 @@
                                 placeholder="Enter patient age"
                         >
                     </div>
+                    <p>Select Gender:</p>
                     <div class="form-group">
-                        <label>Patient Gender</label>
                         <input
-                                type="text"
+                                type="radio"
+                                id="male"
                                 name="gender"
                                 th:field="*{gender}"
-                                class="form-control"
-                                placeholder="Select patient gender"
+                                th:value="MALE"
                         >
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                type="radio"
+                                id="female"
+                                name="gender"
+                                th:field="*{gender}"
+                                th:value="FEMALE"
+                        >
+                        <label for="female">Female</label>
                     </div>
                     <div class="form-group">
                         <label>Cause of Death</label>
@@ -87,6 +98,7 @@
                                 name="dateOfBirth"
                                 id="dateOfBirth"
                                 th:field="*{dateOfBirth}"
+                                th:value="${patient.dateOfBirth}"
                                 class="form-control"
                         >
                     </div>
@@ -97,6 +109,7 @@
                                 name="dateOfDeath"
                                 id="dateOfDeath"
                                 th:field="*{dateOfDeath}"
+                                th:value="${patient.dateOfDeath}"
                                 class="form-control"
                         >
                     </div>

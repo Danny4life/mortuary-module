@@ -12,4 +12,6 @@ public interface PatientProfileService {
     PatientProfile getPatientById(Long id);
 
     PatientProfile updatePatientProfile(PatientProfile patientProfile);
+
+    void deletePatientProfileById(Long id);
 }

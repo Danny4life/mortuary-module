@@ -60,11 +60,14 @@
                 <td th:text="${patient.dateOfBirth}"></td>
                 <td th:text="${patient.dateOfDeath}"></td>
                 <td>
-                    <a
+                    <a th:href="@{/patientProfile/edit/{id}(id=${patient.id})}"
                        class="btn btn-primary">
                         Update
                     </a>
-                    <a class="btn btn-danger">Delete</a>
+                    <a th:href="@{/patientProfile/{id}(id=${patient.id})}"
+                       class="btn btn-danger">
+                        Delete
+                    </a>
                 </td>
             </tr>
         </tbody>

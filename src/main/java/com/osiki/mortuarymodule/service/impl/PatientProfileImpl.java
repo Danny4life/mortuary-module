@@ -38,4 +38,9 @@ public class PatientProfileImpl implements PatientProfileService {
     public PatientProfile updatePatientProfile(PatientProfile patientProfile) {
         return patientProfileRepository.save(patientProfile);
     }
+
+    @Override
+    public void deletePatientProfileById(Long id) {
+        patientProfileRepository.deleteById(id);
+    }
 }
